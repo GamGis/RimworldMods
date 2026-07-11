@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>감기 // RimWorld Workshop</title>
+<meta property="og:title" content="감기의 림월드 모드 6종">
+<meta property="og:description" content="C#(Harmony) + XML로 만든 림월드 1.6 모드 모음.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0f12; --bg-raised:#14181d; --bg-panel:#171c22;
+    --line:#232b32; --line-soft:#1a2026;
+    --text:#e2e8ea; --text-dim:#828e94;
+    --mono:'IBM Plex Mono', monospace; --sans:'IBM Plex Sans KR', sans-serif;
+    --sig:#5ee6a8; --amber:#f2b84b; --blue:#63b3f0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{ background:var(--bg); color:var(--text); font-family:var(--sans); line-height:1.65; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  ::selection{ background:var(--sig); color:#0c0f12; }
+  a{ color:inherit; }
+  img{ display:block; max-width:100%; }
+
+  .noise{ position:fixed; inset:0; pointer-events:none; opacity:.03; z-index:100;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
+  header.hero{ position:relative; padding: 6.5rem 6vw 3.5rem; border-bottom:1px solid var(--line); }
+  .eyebrow{ font-family:var(--mono); font-size:.76rem; color:var(--text-dim); display:flex; align-items:center; gap:.6em; margin-bottom:2rem; letter-spacing:.04em; }
+  .eyebrow .dot{ width:7px; height:7px; border-radius:50%; background:var(--sig); box-shadow:0 0 8px var(--sig); animation:pulse 1.9s ease-in-out infinite; }
+  @keyframes pulse{ 0%,100%{opacity:1;} 50%{opacity:.3;} }
+
+  h1.title{ font-family:var(--mono); font-weight:700; font-size:clamp(2rem, 5.2vw, 3.7rem); letter-spacing:-0.02em; line-height:1.1; color:#f2f6f7; }
+  h1.title .accent{ color:var(--sig); }
+  .subhead{ margin-top:1.4rem; max-width:600px; color:var(--text-dim); font-size:1.02rem; }
+  .subhead b{ color:var(--text); font-weight:600; }
+
+  .totals{ margin-top:2.8rem; display:grid; grid-template-columns:repeat(auto-fit, minmax(150px,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:10px; overflow:hidden; }
+  .totals .cell{ background:var(--bg-raised); padding:1.4rem 1.5rem; }
+  .totals .cell .n{ font-family:var(--mono); font-size:clamp(1.7rem,3.4vw,2.4rem); font-weight:700; color:#f2f6f7; letter-spacing:-0.01em; }
+  .totals .cell .k{ font-family:var(--mono); font-size:.7rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:.06em; margin-top:.3rem; }
+  .totals .cell.hl .n{ color:var(--sig); }
+  .totals .note{ grid-column:1/-1; background:var(--bg); padding:.7rem 1.5rem; font-family:var(--mono); font-size:.68rem; color:var(--text-dim); border-top:1px solid var(--line); display:flex; align-items:center; gap:.5em; }
+  .totals .note .live{ width:6px; height:6px; border-radius:50%; background:var(--sig); box-shadow:0 0 6px var(--sig); }
+
+  .mods{ padding: 1rem 6vw 2rem; }
+  .row{ display:grid; grid-template-columns: 1fr 1fr; gap: clamp(1.5rem, 4vw, 3.5rem); align-items:center; padding: 3.2rem 0; border-bottom:1px solid var(--line-soft); }
+  .row:last-child{ border-bottom:none; }
+  .row .media{ order:1; } .row .body{ order:2; }
+  .row.flip .media{ order:2; } .row.flip .body{ order:1; }
+
+  .media{ position:relative; border:1px solid var(--line); border-radius:8px; overflow:hidden; background:var(--bg-panel); aspect-ratio: 16 / 9; }
+  .media img{ width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
+  .row:hover .media img{ transform:scale(1.04); }
+  .media .idx{ position:absolute; top:.7rem; left:.8rem; z-index:2; font-family:var(--mono); font-size:.72rem; color:var(--text); background:rgba(12,15,18,.72); padding:.2em .55em; border-radius:4px; backdrop-filter:blur(4px); border:1px solid var(--line); }
+  .media .fallback{ position:absolute; inset:0; display:none; flex-direction:column; align-items:center; justify-content:center; gap:.6rem; background: radial-gradient(120% 120% at 20% 0%, rgba(94,230,168,.10), transparent 60%), repeating-linear-gradient(45deg, #12171c 0 12px, #141a20 12px 24px); font-family:var(--mono); text-align:center; padding:1rem; }
+  .media.failed img{ display:none; }
+  .media.failed .fallback{ display:flex; }
+  .fallback .fb-name{ font-size:1rem; color:#f2f6f7; font-weight:600; }
+  .fallback .fb-note{ font-size:.7rem; color:var(--text-dim); }
+
+  .body .kicker{ font-family:var(--mono); font-size:.74rem; color:var(--sig); letter-spacing:.05em; margin-bottom:.6rem; }
+  .body h2{ font-family:var(--mono); font-size:clamp(1.35rem, 2.6vw, 1.85rem); font-weight:600; color:#f2f6f7; letter-spacing:-0.01em; margin-bottom:.5rem; }
+  .body .stat-inline{ font-family:var(--mono); font-size:.72rem; color:var(--text-dim); margin-bottom:.9rem; }
+  .body .stat-inline b{ color:var(--text); font-weight:600; }
+  .body p{ color:#b4bec3; font-size:.96rem; margin-bottom:1.1rem; }
+  .body p:last-of-type{ margin-bottom:1.3rem; }
+  .body p b{ color:var(--text); font-weight:600; }
+
+  .tags{ display:flex; flex-wrap:wrap; gap:.45rem; margin-bottom:1.3rem; }
+  .pill{ font-family:var(--mono); font-size:.68rem; padding:.24em .65em; border-radius:99px; border:1px solid var(--line); color:var(--text-dim); }
+  .pill.dlc{ color:var(--amber); border-color:rgba(242,184,75,.32); }
+  .pill.new{ color:var(--sig); border-color:rgba(94,230,168,.32); }
+  .pill.frame{ color:var(--blue); border-color:rgba(99,179,240,.32); }
+
+  .link{ display:inline-flex; align-items:center; gap:.5em; font-family:var(--mono); font-size:.82rem; color:var(--sig); text-decoration:none; border-bottom:1px solid transparent; transition:border-color .2s, gap .2s; }
+  .link:hover{ border-color:var(--sig); gap:.75em; }
+  .link .arw{ transition:transform .2s; }
+  .link:hover .arw{ transform:translateX(2px); }
+
+  footer{ padding:3rem 6vw 4rem; border-top:1px solid var(--line); display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem; font-family:var(--mono); font-size:.78rem; color:var(--text-dim); }
+  footer a{ color:var(--sig); text-decoration:none; border-bottom:1px solid transparent; }
+  footer a:hover{ border-color:var(--sig); }
+  footer .brand{ color:var(--text); }
+
+  @media (max-width:760px){
+    header.hero{ padding:5rem 7vw 2.8rem; }
+    .mods{ padding:0 7vw; }
+    .row{ grid-template-columns: 1fr; gap:1.3rem; padding:2.6rem 0; }
+    .row .media, .row.flip .media{ order:1; }
+    .row .body, .row.flip .body{ order:2; }
+    footer{ flex-direction:column; }
+  }
+  @media (prefers-reduced-motion: reduce){ *, *::before, *::after{ animation-duration:.001ms !important; transition:none !important; } }
+</style>
+</head>
+<body>
+<div class="noise"></div>
+
+<header class="hero">
+  <div class="eyebrow"><span class="dot"></span>RIMWORLD WORKSHOP · @gamgisteam</div>
+  <h1 class="title">감기의 림월드<br>모드 <span class="accent">6종</span></h1>
+  <p class="subhead">
+    C#(Harmony) + XML로 만든 <b>림월드 1.6</b> 모드 모음. 기계체 인간화 프레임워크부터 우주 정원, 마스코트 컴패니언까지 — 대부분 콜로니 플레이 중 "이게 있으면 좋겠다" 싶은 것에서 출발했어요.
+  </p>
+
+  <div class="totals">
+    <div class="cell hl"><div class="n" id="t-views">—</div><div class="k">누적 방문자 (합계)</div></div>
+    <div class="cell hl"><div class="n" id="t-subs">—</div><div class="k">구독자 (합계)</div></div>
+    <div class="cell"><div class="n">6</div><div class="k">공개 모드</div></div>
+    <div class="cell"><div class="n">1.6</div><div class="k">RimWorld Ver.</div></div>
+    <div class="note"><span class="live"></span><span id="updated-note">스팀 워크샵 통계 · 하루 1회 자동 갱신</span></div>
+  </div>
+</header>
+
+<main class="mods" id="mods"></main>
+
+<footer>
+  <div><span class="brand">감기 (GamGi)</span> · RimWorld Mod Developer</div>
+  <div>
+    <a href="https://github.com/GamGis" target="_blank" rel="noopener">GitHub ↗</a>
+    &nbsp;·&nbsp;
+    <a href="https://steamcommunity.com/id/gamgisteam/myworkshopfiles/?appid=294100" target="_blank" rel="noopener">Steam Workshop ↗</a>
+  </div>
+</footer>
+
+<script>
+const WORKSHOP = id => `https://steamcommunity.com/sharedfiles/filedetails/?id=${id}`;
+const fmt = n => (n ?? 0).toLocaleString('en-US');
+const kfmt = n => n >= 1000 ? (n/1000).toFixed(1).replace(/\.0$/,'') + 'K' : String(n);
+
+function pill(p){ return `<span class="pill ${p.cls}">${p.t}</span>`; }
+
+function card(mod, i, stat){
+  const flip = (i % 2 === 1) ? ' flip' : '';
+  const idx = String(i + 1).padStart(2, '0');
+  const paras = mod.desc.map(d => `<p>${d}</p>`).join('');
+  const tags = mod.tags.map(pill).join('');
+  // stat line: rating (if any) + subs + views
+  const bits = [];
+  if (mod.rating) bits.push(mod.rating);
+  bits.push(`<b>${fmt(stat.subs)}</b> subs`);
+  bits.push(`<b>${kfmt(stat.views)}</b> visits`);
+  if (stat.fav) bits.push(`<b>${fmt(stat.fav)}</b> fav`);
+  const statLine = bits.join(' · ');
+
+  return `
+  <section class="row${flip}">
+    <div class="media">
+      <span class="idx">${idx}</span>
+      <img src="${mod.image}" alt="${mod.title}" loading="lazy"
+           onerror="this.closest('.media').classList.add('failed')">
+      <div class="fallback">
+        <div class="fb-name">${mod.title}</div>
+        <div class="fb-note">preview on Steam Workshop →</div>
+      </div>
+    </div>
+    <div class="body">
+      <div class="kicker">// ${mod.kicker}</div>
+      <h2>${mod.title}</h2>
+      <div class="stat-inline">${statLine}</div>
+      ${paras}
+      <div class="tags">${tags}</div>
+      <a class="link" href="${WORKSHOP(mod.id)}" target="_blank" rel="noopener">워크샵에서 보기 <span class="arw">→</span></a>
+    </div>
+  </section>`;
+}
+
+async function load(){
+  // cache-bust so a fresh stats.json is always fetched
+  const bust = `?v=${Date.now()}`;
+  const [mods, stats] = await Promise.all([
+    fetch('mods.json' + bust).then(r => r.json()),
+    fetch('stats.json' + bust).then(r => r.json()).catch(() => ({items:{}}))
+  ]);
+
+  const items = stats.items || {};
+  let totSubs = 0, totViews = 0;
+
+  document.getElementById('mods').innerHTML =
+    mods.mods.map((m, i) => {
+      const s = items[m.id] || {subs:0, views:0, fav:0};
+      totSubs += s.subs || 0;
+      totViews += s.views || 0;
+      return card(m, i, s);
+    }).join('');
+
+  document.getElementById('t-subs').textContent = fmt(totSubs);
+  document.getElementById('t-views').textContent = fmt(totViews);
+
+  if (stats.updated){
+    const d = new Date(stats.updated);
+    if (!isNaN(d)){
+      const ymd = d.toISOString().slice(0,10);
+      document.getElementById('updated-note').textContent =
+        `스팀 워크샵 통계 · 마지막 갱신 ${ymd} · 하루 1회 자동`;
+    }
+  }
+}
+load();
+</script>
+</body>
+</html>

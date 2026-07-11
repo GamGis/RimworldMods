@@ -1,0 +1,145 @@
+{
+  "mods": [
+    {
+      "id": "3729711992",
+      "title": "Mechanoid Baby",
+      "kicker": "FRAMEWORK · BIOTECH",
+      "image": "images/mechbaby.jpg",
+      "rating": "★★★★",
+      "desc": [
+        "기계체에 <b>인공 자궁</b>을 이식해 인간 아이를 낳는 프레임워크. 연구 후 자궁을 제작·이식하면 해당 기계체가 주기적으로 배란하고, 임신·출산을 거쳐 생물학적 아버지의 유전자를 물려받은 아이가 태어나요. 산업·스페이서·아크로텍 3티어 자궁과 메카나이트 강화 아이까지 지원."
+      ],
+      "tags": [
+        {
+          "cls": "frame",
+          "t": "Framework"
+        },
+        {
+          "cls": "dlc",
+          "t": "Biotech"
+        },
+        {
+          "cls": "",
+          "t": "C# Harmony"
+        }
+      ]
+    },
+    {
+      "id": "3729712337",
+      "title": "Cozy Companions",
+      "kicker": "ANIMAL · ATMOSPHERE",
+      "image": "images/cozy.jpg",
+      "rating": "★★★",
+      "desc": [
+        "한국 게임·인터넷 밈 속 <b>마스코트</b>들을 콜로니로 데려오는 모드. 각자 고유한 무드 아우라를 주고, 여럿 모일수록 시너지가 붙어요. 위험을 감지하면 빛의 속도로 도망쳐서 절대 죽지 않아요."
+      ],
+      "tags": [
+        {
+          "cls": "",
+          "t": "Animal"
+        },
+        {
+          "cls": "",
+          "t": "C# Harmony"
+        }
+      ]
+    },
+    {
+      "id": "3761101347",
+      "title": "Gravship Garden",
+      "kicker": "ODYSSEY · TERRAIN",
+      "image": "images/gravship.jpg",
+      "rating": "NEW",
+      "desc": [
+        "그라브십 내부에 <b>진짜 흙과 물</b>을 깔고 특수 나무로 우주 정원을 꾸미는 모드. 배의 서브스트럭처는 그대로 보존돼서 비행에 영향이 없어요. 연구로 흙·비옥한 흙·얕은 물·온천을 단계적으로 해금하고, DLC가 있으면 아니마·폴룩스·가우란렌 나무 호환까지 적용돼요."
+      ],
+      "tags": [
+        {
+          "cls": "new",
+          "t": "New"
+        },
+        {
+          "cls": "dlc",
+          "t": "Odyssey"
+        },
+        {
+          "cls": "",
+          "t": "C# · XML"
+        }
+      ]
+    },
+    {
+      "id": "3761101124",
+      "title": "Mechanoid Lovers",
+      "kicker": "RELATIONSHIP · BIOTECH",
+      "image": "images/mechlovers.jpg",
+      "rating": "NEW",
+      "desc": [
+        "기계체를 단순한 도구에서 <b>관계를 맺는 존재</b>로 바꾸는 모드. 페르소나 주입기로 충직·새침·집착·우아·상냥·성실·덜렁 7가지 성격 중 하나를 부여하고, 정든 기계체에게 고백 이벤트를 열고 결혼반지를 줄 수 있어요. RimTalk 설치 시 성격에 맞는 말투로 대화까지."
+      ],
+      "tags": [
+        {
+          "cls": "new",
+          "t": "New"
+        },
+        {
+          "cls": "dlc",
+          "t": "Biotech"
+        },
+        {
+          "cls": "",
+          "t": "C# Harmony"
+        }
+      ]
+    },
+    {
+      "id": "3761101455",
+      "title": "Special Production Adjuster",
+      "kicker": "UTILITY · TUNING",
+      "image": "images/spa.jpg",
+      "rating": "NEW",
+      "desc": [
+        "바닐라·모드 동물과 휴먼라이크 종족의 <b>생산량과 등장 빈도</b>를 세밀하게 조절하는 유틸. 우유·알·양털·깃털 등 몸에서 자원을 만드는 모든 대상의 산출량과 속도를 설정에서 대상별로 조정하고, 바이옴 등장 빈도까지 편집할 수 있어요. 밀리라 깃털처럼 모드 생산도 자동 인식."
+      ],
+      "tags": [
+        {
+          "cls": "new",
+          "t": "New"
+        },
+        {
+          "cls": "",
+          "t": "Utility"
+        },
+        {
+          "cls": "",
+          "t": "C# Harmony"
+        }
+      ]
+    },
+    {
+      "id": "3722129693",
+      "title": "Mechanoid Milk",
+      "kicker": "FRAMEWORK · MILKING",
+      "image": "images/mechmilk.jpg",
+      "rating": "",
+      "desc": [
+        "메카노이드를 위한 <b>착유 시스템</b>을 추가하는 프레임워크. 지원되는 메카노이드 모드가 있으면 특정 메카가 각자 고유한 효과의 특수 우유를 생산해요. Equal Milking에서 영감을 받았고, 우유마다 메카의 개성과 테마를 반영한 버프가 붙어서 주로 상위 티어 메카에게 적용돼요.",
+        "착유는 조련이 아닌 <b>제작 스킬</b>에 영향을 받고 메카나이터가 직접 수행해요. Mechanoid Baby와 함께 쓰면 \"임신·출산 경험이 있는 메카만 착유 가능\" 옵션도 켤 수 있어요. 지원: Azurtrail·Steelvivian·Stormmarina·SortieLion·The Black Goat (더 추가 예정)."
+      ],
+      "tags": [
+        {
+          "cls": "frame",
+          "t": "Framework"
+        },
+        {
+          "cls": "",
+          "t": "XML 확장형"
+        },
+        {
+          "cls": "",
+          "t": "C# Harmony"
+        }
+      ]
+    }
+  ]
+}
