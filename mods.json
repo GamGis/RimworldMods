@@ -1,13 +1,54 @@
 {
+  "ui": {
+    "ko": {
+      "eyebrow": "RIMWORLD WORKSHOP · @gamgisteam",
+      "title_1": "감기의 림월드",
+      "title_2": "모드",
+      "title_3": "6종",
+      "subhead": "C#(Harmony) + XML로 만든 <b>림월드 1.6</b> 모드 모음. 메카노이드를 도구가 아닌 존재로 만드는 프레임워크부터, 우주 정원과 마스코트 친구들까지.",
+      "k_views": "누적 방문자 (합계)",
+      "k_subs": "구독자 (합계)",
+      "k_mods": "공개 모드",
+      "k_ver": "RimWorld 버전",
+      "note": "스팀 워크샵 통계 · 하루 1회 자동 갱신",
+      "note_dated": "스팀 워크샵 통계 · 마지막 갱신 {d} · 하루 1회 자동",
+      "cta": "워크샵에서 보기",
+      "req": "요구 모드",
+      "role": "림월드 모드 개발자",
+      "subs": "구독",
+      "visits": "방문",
+      "fav": "즐겨찾기",
+      "credit": "제작 도움"
+    },
+    "en": {
+      "eyebrow": "RIMWORLD WORKSHOP · @gamgisteam",
+      "title_1": "GamGi's RimWorld",
+      "title_2": "Mods",
+      "title_3": "×6",
+      "subhead": "A collection of <b>RimWorld 1.6</b> mods built with C# (Harmony) + XML. From frameworks that turn mechanoids into beings rather than tools, to space gardens and mascot companions.",
+      "k_views": "Total Visitors",
+      "k_subs": "Total Subscribers",
+      "k_mods": "Published Mods",
+      "k_ver": "RimWorld Ver.",
+      "note": "Steam Workshop stats · auto-updated daily",
+      "note_dated": "Steam Workshop stats · last updated {d} · daily",
+      "cta": "View on Workshop",
+      "req": "Requires",
+      "role": "RimWorld Mod Developer",
+      "subs": "subs",
+      "visits": "visits",
+      "fav": "fav",
+      "credit": "Built with"
+    }
+  },
   "mods": [
     {
       "id": "3729711992",
-      "title": "Mechanoid Baby",
-      "kicker": "FRAMEWORK · BIOTECH",
       "image": "images/mechbaby.jpg",
       "rating": "★★★★",
-      "desc": [
-        "기계체에 <b>인공 자궁</b>을 이식해 인간 아이를 낳는 프레임워크. 연구 후 자궁을 제작·이식하면 해당 기계체가 주기적으로 배란하고, 임신·출산을 거쳐 생물학적 아버지의 유전자를 물려받은 아이가 태어나요. 산업·스페이서·아크로텍 3티어 자궁과 메카나이트 강화 아이까지 지원."
+      "req": [
+        "Harmony",
+        "Biotech DLC"
       ],
       "tags": [
         {
@@ -22,16 +63,160 @@
           "cls": "",
           "t": "C# Harmony"
         }
-      ]
+      ],
+      "ko": {
+        "title": "Mechanoid Baby",
+        "kicker": "FRAMEWORK · BIOTECH",
+        "tagline": "메카노이드에게 인공 자궁을 이식해 인간 아이를 잉태시키는 프레임워크",
+        "desc": [
+          "메카나이터 솔로 플레이를 위해 설계됐어요. 인공 자궁을 연구해 제작하고 호환 메카노이드에 이식하면 그 메카는 주기적으로 <b>배란</b>합니다. 정자 주입이나 침대 공유로 임신이 가능하고, 임신 기간이 지나면 <b>친부의 유전자를 물려받은 인간 아이</b>가 태어나요.",
+          "자궁은 3종 — <b>인공 자궁(산업)</b>은 강철·부품으로 제작(배란 24일/임신 18일), <b>생체공학 자궁(우주)</b>은 플라스틸로 제작하며 메카나이트 강화 아이를 출산할 수 있고, <b>초월공학 자궁</b>은 제작 불가 희귀품으로 배란·임신 모두 10일에 결함 없는 강화 아이를 안정적으로 출산합니다."
+        ],
+        "bullets": [
+          "프레임워크 구조 — 모든 메카노이드 자동 호환 (모드 메카 포함)",
+          "임신 방식 3종: 정자 주입 수술 / 임신 의도 있는 사랑 / 사랑만",
+          "자궁 적출·재이식 — 한 자궁을 여러 메카에 옮겨 사용",
+          "친부 유전자 및 제노타입 상속",
+          "강화 아이: 혈액여과·혈액순환·이동·청각·시력 +25%",
+          "메카나이터가 직접 아기를 꺼내는 출산 추출 시스템"
+        ]
+      },
+      "en": {
+        "title": "Mechanoid Baby",
+        "kicker": "FRAMEWORK · BIOTECH",
+        "tagline": "A framework for implanting artificial wombs in mechanoids to conceive human children",
+        "desc": [
+          "Designed for <b>solo mechanitor</b> playthroughs. Research and craft an artificial womb, implant it into a compatible mechanoid, and that mech begins to <b>ovulate</b> periodically. Induce pregnancy through sperm injection or by sharing a bed — after gestation, a human child carrying the <b>biological father's genes</b> is born.",
+          "Three tiers: the <b>Artificial Womb (industrial)</b> is built from steel and components (24d ovulation / 18d gestation), the <b>Bionic Womb (spacer)</b> uses plasteel and can produce mechanite-enhanced children, and the <b>Archotech Womb</b> can't be crafted at all — only traded or rewarded — reliably delivering flawless enhanced children on a 10-day cycle."
+        ],
+        "bullets": [
+          "Framework design — all mechanoids compatible, including modded ones",
+          "Three ways to conceive: sperm injection surgery / intimacy with intent / intimacy without",
+          "Wombs can be extracted and re-implanted across different mechs",
+          "Father's genes and xenotype are inherited",
+          "Enhanced children: +25% blood filtration, pumping, moving, hearing, sight",
+          "Birth extraction — the mechanitor personally delivers the baby"
+        ]
+      },
+      "credit": "Claude Opus 4.7"
+    },
+    {
+      "id": "3722129693",
+      "image": "images/mechmilk.jpg",
+      "rating": "",
+      "req": [
+        "Harmony"
+      ],
+      "tags": [
+        {
+          "cls": "frame",
+          "t": "Framework"
+        },
+        {
+          "cls": "",
+          "t": "XML"
+        },
+        {
+          "cls": "",
+          "t": "C# Harmony"
+        }
+      ],
+      "ko": {
+        "title": "Mechanoid Milk",
+        "kicker": "FRAMEWORK · MILKING",
+        "tagline": "메카노이드를 위한 착유 시스템 프레임워크",
+        "desc": [
+          "지원되는 메카노이드 모드가 설치돼 있으면 특정 메카들이 <b>각자 고유한 효과의 특수 우유</b>를 생산합니다. 버프가 꽤 강력해서 주로 상위 티어 메카에게 적용되고, 각 우유는 해당 메카의 개성과 테마를 반영한 효과를 지녀요. Equal Milking에서 영감을 받았습니다.",
+          "착유는 조련이 아닌 <b>제작 스킬</b>에 영향을 받고, 메카나이터가 직접 수행합니다. Mechanoid Baby와 함께 쓰면 \"임신·출산 경험이 있는 메카만 착유 가능\" 옵션도 켤 수 있어요."
+        ],
+        "bullets": [
+          "확장형 프레임워크 — 새 메카노이드 모드에 쉽게 대응",
+          "지원: Azurtrail · Steelvivian · Stormmarina · SortieLion · The Black Goat",
+          "조련이 아닌 제작 스킬 기반 — 메카나이터가 직접 착유",
+          "착유 주기와 생산량을 모드 설정에서 조정",
+          "더 많은 모드 지원 예정"
+        ]
+      },
+      "en": {
+        "title": "Mechanoid Milk",
+        "kicker": "FRAMEWORK · MILKING",
+        "tagline": "A milking system framework for mechanoids",
+        "desc": [
+          "With supported mechanoid mods installed, certain mechs produce <b>special milk with unique effects</b>. The buffs are strong enough that they're mostly reserved for higher-tier mechs, and each milk's effect reflects that mech's own personality and theme. Inspired by Equal Milking.",
+          "Milking is driven by the <b>Crafting skill</b> rather than Animals, and mechanitors perform the work themselves. Paired with Mechanoid Baby, you can enable an option restricting milking to mechs that have been pregnant or given birth."
+        ],
+        "bullets": [
+          "Extensible framework — easy to support new mechanoid mods",
+          "Supported: Azurtrail · Steelvivian · Stormmarina · SortieLion · The Black Goat",
+          "Milking uses the Crafting skill, not Animals — mechanitors do the work",
+          "Milking interval and yield adjustable in mod settings",
+          "More mod support coming soon"
+        ]
+      },
+      "credit": "Claude Opus 4.7"
+    },
+    {
+      "id": "3761101124",
+      "image": "images/mechlovers.jpg",
+      "rating": "NEW",
+      "req": [
+        "Harmony",
+        "Biotech DLC"
+      ],
+      "tags": [
+        {
+          "cls": "new",
+          "t": "New"
+        },
+        {
+          "cls": "dlc",
+          "t": "Biotech"
+        },
+        {
+          "cls": "",
+          "t": "C# Harmony"
+        }
+      ],
+      "ko": {
+        "title": "Mechanoid Lovers",
+        "kicker": "RELATIONSHIP · BIOTECH",
+        "tagline": "메카노이드를 도구가 아닌, 관계를 맺을 수 있는 존재로",
+        "desc": [
+          "성격을 부여하고, 유대를 쌓고, 고백하고, 결혼 반지를 끼워줄 수 있어요. <b>페르소나 주입기</b>로 메카에게 7가지 성격 중 하나를 부여합니다 — 충성스러움 · 새침함 · 응석부림 · 우아함 · 상냥함 · 성실함 · 덜렁댐. 무작위 재구성 주입기와 성격별 전용 주입기가 따로 있어요.",
+          "정착민이 마음에 든 메카에게 <b>고백</b>할 수 있고, 짧은 연출과 함께 관계가 맺어집니다. 메카노이드는 사회 탭에 관계 정보를 표시하고, 은·금·비취옥 결혼 반지와 반지함을 제작할 수 있어요."
+        ],
+        "bullets": [
+          "메카-사람 연인 관계 형성",
+          "성격 기반 유대 시스템",
+          "사회 탭 관계 표시",
+          "(선택) RimTalk 연동 시 성격에 맞는 말투로 대사 생성",
+          "의견·고백·결혼 흐름을 더 자연스럽게 확장 예정"
+        ]
+      },
+      "en": {
+        "title": "Mechanoid Lovers",
+        "kicker": "RELATIONSHIP · BIOTECH",
+        "tagline": "Turning mechanoids from tools into beings you can build a relationship with",
+        "desc": [
+          "Give them a personality, build a bond, confess your feelings, and give them a wedding ring. A <b>persona injector</b> grants a mech one of seven personalities — Loyal, Prim, Clingy, Elegant, Kind, Diligent, or Clumsy. There's a random-reroll injector plus dedicated injectors for each specific personality.",
+          "A colonist can <b>confess</b> to a mech they've grown fond of, complete with a short confession scene. Mechs display relationship information in their Social tab, and you can craft silver / gold / jade wedding rings and ring cases."
+        ],
+        "bullets": [
+          "Lover relationships with mechanoids",
+          "Personality-based bonding system",
+          "Social tab relationship display",
+          "Optional RimTalk integration — mechs speak in a tone matching their personality",
+          "Opinion, confession, and marriage flow to be expanded further"
+        ]
+      },
+      "credit": "Opus 4.8 · GPT 5.5"
     },
     {
       "id": "3729712337",
-      "title": "Cozy Companions",
-      "kicker": "ANIMAL · ATMOSPHERE",
       "image": "images/cozy.jpg",
       "rating": "★★★",
-      "desc": [
-        "한국 게임·인터넷 밈 속 <b>마스코트</b>들을 콜로니로 데려오는 모드. 각자 고유한 무드 아우라를 주고, 여럿 모일수록 시너지가 붙어요. 위험을 감지하면 빛의 속도로 도망쳐서 절대 죽지 않아요."
+      "req": [
+        "Harmony"
       ],
       "tags": [
         {
@@ -42,16 +227,48 @@
           "cls": "",
           "t": "C# Harmony"
         }
-      ]
+      ],
+      "ko": {
+        "title": "Cozy Companions",
+        "kicker": "ANIMAL · ATMOSPHERE",
+        "tagline": "정착지에 작은 행복을 가져다주는 마스코트 친구들",
+        "desc": [
+          "도로롱 · 스피키 · 지에엥 · 아니마 · 괴렘 · 윾돌이 · 븜돌이 — 한국 게임과 인터넷 문화 속 마스코트 친구들이 정착지에 찾아옵니다. 각자 고유한 <b>무드 오라</b>를 주고, 여러 친구를 함께 데려오면 시너지가 붙어요 (7마리 전원 집합 시 <b>+12</b>!).",
+          "마스코트는 <b>죽지 않습니다</b> — 위기를 감지하면 빛의 속도로 도망치거든요. 한 번 길들인 친구는 정착지의 유일무이한 존재가 되고, 더 이상 야생에 나타나지 않습니다."
+        ],
+        "bullets": [
+          "각 마스코트마다 고유 무드 오라",
+          "마스코트는 죽지 않음 — 위기 감지 시 즉시 도주",
+          "야생 등장 시 알림 발송",
+          "지에엥·괴렘 희귀 바리에이션",
+          "가볍게 즐기는 분위기 중심 동물 모드"
+        ]
+      },
+      "en": {
+        "title": "Cozy Companions",
+        "kicker": "ANIMAL · ATMOSPHERE",
+        "tagline": "Mascot companions that bring small joys to your colony",
+        "desc": [
+          "Brings mascots from Korean games and internet culture — <b>Dororong, Speaki, Giengi, Anima, Irem, Yuridori, and Beumdori</b>. If you're not familiar with these memes the charm might be a bit mysterious, but that's part of the fun.",
+          "Each mascot grants a unique <b>mood aura</b>, and bringing several together unlocks synergy effects (all seven at once = <b>+12</b>!). Once tamed, a companion becomes a one-of-a-kind presence and no longer spawns in the wild."
+        ],
+        "bullets": [
+          "A unique mood aura for every mascot",
+          "Mascots never die — they sense danger and flee at the speed of light",
+          "Wild arrival notifications via Letter",
+          "Rare alternate appearances for Giengi and Irem",
+          "A light, atmosphere-focused animal mod"
+        ]
+      },
+      "credit": "Claude"
     },
     {
       "id": "3761101347",
-      "title": "Gravship Garden",
-      "kicker": "ODYSSEY · TERRAIN",
       "image": "images/gravship.jpg",
       "rating": "NEW",
-      "desc": [
-        "그라브십 내부에 <b>진짜 흙과 물</b>을 깔고 특수 나무로 우주 정원을 꾸미는 모드. 배의 서브스트럭처는 그대로 보존돼서 비행에 영향이 없어요. 연구로 흙·비옥한 흙·얕은 물·온천을 단계적으로 해금하고, DLC가 있으면 아니마·폴룩스·가우란렌 나무 호환까지 적용돼요."
+      "req": [
+        "Harmony",
+        "Odyssey DLC"
       ],
       "tags": [
         {
@@ -66,40 +283,47 @@
           "cls": "",
           "t": "C# · XML"
         }
-      ]
-    },
-    {
-      "id": "3761101124",
-      "title": "Mechanoid Lovers",
-      "kicker": "RELATIONSHIP · BIOTECH",
-      "image": "images/mechlovers.jpg",
-      "rating": "NEW",
-      "desc": [
-        "기계체를 단순한 도구에서 <b>관계를 맺는 존재</b>로 바꾸는 모드. 페르소나 주입기로 충직·새침·집착·우아·상냥·성실·덜렁 7가지 성격 중 하나를 부여하고, 정든 기계체에게 고백 이벤트를 열고 결혼반지를 줄 수 있어요. RimTalk 설치 시 성격에 맞는 말투로 대화까지."
       ],
-      "tags": [
-        {
-          "cls": "new",
-          "t": "New"
-        },
-        {
-          "cls": "dlc",
-          "t": "Biotech"
-        },
-        {
-          "cls": "",
-          "t": "C# Harmony"
-        }
-      ]
+      "ko": {
+        "title": "Gravship Garden",
+        "kicker": "ODYSSEY · TERRAIN",
+        "tagline": "차가운 금속 갑판 대신, 살아 있는 정원을 품은 배로 우주를 항해하세요",
+        "desc": [
+          "중력부양선 내부에 <b>진짜 자연 토양과 물</b>을 깔고 특수나무로 우주 정원을 꾸밀 수 있어요. 하부구조는 그대로 보존되기 때문에 <b>비행에 전혀 지장이 없습니다</b>.",
+          "토양 · 비옥한 토양 · 얕은 물 · 온천을 <b>연구로 단계적 해금</b>하고, 관련 DLC가 설치돼 있으면 영혼나무 · 정화나무 · 요정나무 같은 특수나무 호환 기능까지 적용돼요."
+        ],
+        "bullets": [
+          "중력부양선 내부에 진짜 토양·물 설치",
+          "하부구조 보존 — 비행에 지장 없음",
+          "토양·비옥한 토양·얕은 물·온천을 연구로 단계적 해금",
+          "특수나무 지원: 영혼나무·정화나무·요정나무",
+          "다른 DLC 콘텐츠는 설치 시 적용, 없으면 무시"
+        ]
+      },
+      "en": {
+        "title": "Gravship Garden",
+        "kicker": "ODYSSEY · TERRAIN",
+        "tagline": "Sail the void in a ship that carries a living garden, not a cold metal deck",
+        "desc": [
+          "Lay down <b>real natural soil and water</b> inside your gravship and landscape a garden in space with special trees. The substructure stays fully intact, so <b>flight is completely unaffected</b>.",
+          "Soil, rich soil, shallow water, and hot springs unlock <b>progressively through research</b>, and with the relevant DLCs installed, compatibility extends to special trees like anima, polux, and gauranlen."
+        ],
+        "bullets": [
+          "Place real soil and water inside a gravship",
+          "Substructure preserved — flight is unaffected",
+          "Soil, rich soil, shallow water, and hot springs unlocked gradually via research",
+          "Special tree support: anima, polux, and gauranlen trees",
+          "Other DLC content applies if installed, ignored if not"
+        ]
+      },
+      "credit": "Opus 4.8 · GPT 5.5"
     },
     {
       "id": "3761101455",
-      "title": "Special Production Adjuster",
-      "kicker": "UTILITY · TUNING",
       "image": "images/spa.jpg",
       "rating": "NEW",
-      "desc": [
-        "바닐라·모드 동물과 휴먼라이크 종족의 <b>생산량과 등장 빈도</b>를 세밀하게 조절하는 유틸. 우유·알·양털·깃털 등 몸에서 자원을 만드는 모든 대상의 산출량과 속도를 설정에서 대상별로 조정하고, 바이옴 등장 빈도까지 편집할 수 있어요. 밀리라 깃털처럼 모드 생산도 자동 인식."
+      "req": [
+        "Harmony"
       ],
       "tags": [
         {
@@ -114,32 +338,42 @@
           "cls": "",
           "t": "C# Harmony"
         }
-      ]
-    },
-    {
-      "id": "3722129693",
-      "title": "Mechanoid Milk",
-      "kicker": "FRAMEWORK · MILKING",
-      "image": "images/mechmilk.jpg",
-      "rating": "",
-      "desc": [
-        "메카노이드를 위한 <b>착유 시스템</b>을 추가하는 프레임워크. 지원되는 메카노이드 모드가 있으면 특정 메카가 각자 고유한 효과의 특수 우유를 생산해요. Equal Milking에서 영감을 받았고, 우유마다 메카의 개성과 테마를 반영한 버프가 붙어서 주로 상위 티어 메카에게 적용돼요.",
-        "착유는 조련이 아닌 <b>제작 스킬</b>에 영향을 받고 메카나이터가 직접 수행해요. Mechanoid Baby와 함께 쓰면 \"임신·출산 경험이 있는 메카만 착유 가능\" 옵션도 켤 수 있어요. 지원: Azurtrail·Steelvivian·Stormmarina·SortieLion·The Black Goat (더 추가 예정)."
       ],
-      "tags": [
-        {
-          "cls": "frame",
-          "t": "Framework"
-        },
-        {
-          "cls": "",
-          "t": "XML 확장형"
-        },
-        {
-          "cls": "",
-          "t": "C# Harmony"
-        }
-      ]
+      "ko": {
+        "title": "Special Production Adjuster",
+        "kicker": "UTILITY · TUNING",
+        "tagline": "바이옴 출현과 생산량을 대상별로 세밀하게 조절",
+        "desc": [
+          "조련은 꽤 매력적인 요소인데 여러 문제 때문에 홀대받는 게 아쉬워서 만들었어요. 우유 · 알 · 털 · 깃털처럼 <b>몸에서 자원을 생산하는 존재들</b>의 생산량을 모드 설정에서 대상별로 맞출 수 있습니다.",
+          "바닐라와 모드의 <b>인간형 종족·동물</b> 모두 대상이고, 생산 속도 배율과 바이옴 출현 빈도까지 편집 가능해요. 밀리라 깃털, 드라고니안 털처럼 <b>모드 생산도 자동 인식</b>합니다."
+        ],
+        "bullets": [
+          "생산량 배율을 대상별로 조절 (우유·알·털·깃털 등)",
+          "생산 속도 배율 조절",
+          "바닐라·모드 동물의 바이옴 출현 빈도 편집",
+          "인간형 종족의 생산도 지원",
+          "모드 생산 자동 인식 (밀리라 깃털, 드라고니안 털 등)",
+          "동물 모드가 없어도 정상 동작"
+        ]
+      },
+      "en": {
+        "title": "Special Production Adjuster",
+        "kicker": "UTILITY · TUNING",
+        "tagline": "Fine-tune biome spawns and production yields, target by target",
+        "desc": [
+          "Taming is a genuinely attractive element, but it gets neglected because of various friction points — so this exists to fix that. For anything that <b>produces resources from its body</b> — milk, eggs, wool, feathers — you can adjust the output per target in the mod settings.",
+          "Covers both <b>humanlike races and animals</b>, vanilla or modded, and lets you edit production speed multipliers and <b>biome spawn frequency</b> as well. Modded production is recognized automatically — Milira feathers, Dragonian wool, and more."
+        ],
+        "bullets": [
+          "Production multiplier per target (milk, eggs, wool, feathers, etc.)",
+          "Production speed multipliers",
+          "Biome spawn frequency editing for vanilla and modded animals",
+          "Humanlike race production supported",
+          "Modded production auto-recognized",
+          "Works fine with or without animal-related mods"
+        ]
+      },
+      "credit": "Opus 4.8 · GPT 5.5"
     }
   ]
 }
